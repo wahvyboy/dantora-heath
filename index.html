@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" className="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dantora Health Australia | Hospital, Diagnostics & Genomic Care</title>
+    <meta
+      name="description"
+      content="Dantora Health Australia is an advanced hospital and diagnostic medical center in Sydney, Melbourne, and Brisbane, offering plain-English scans, genomics, and specialist consultations."
+    />
+    <meta name="keywords" content="hospital Australia, diagnostics Sydney, 3T MRI Macquarie Street, medical clinic Sydney, genomics Melbourne, health blog Australia, health sector reform" />
+    <meta property="og:title" content="Dantora Health Australia | Modern Hospital & Diagnostics" />
+    <meta property="og:description" content="Clear check-ups, modern body scans, health blog, and friendly specialist doctors across Australia." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts for Ultra-Modern, Crisp, Highly Legible Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- SEO & AEO Structured JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "Dantora Health Australia",
+        "description": "Modern Australian hospital and diagnostic center featuring wide-bore MRI, spectral CT, automated pathology laboratory, and genomic medicine.",
+        "url": "https://dantorahealth.com.au",
+        "email": "care@dantorahealth.com.au",
+        "medicalSpecialty": [
+          "https://schema.org/DiagnosticLab",
+          "https://schema.org/Radiology",
+          "https://schema.org/Cardiovascular",
+          "https://schema.org/Neurologic",
+          "https://schema.org/MedicalGenetics"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "187 Macquarie Street, Specialist Medical Precinct",
+          "addressLocality": "Sydney",
+          "addressRegion": "NSW",
+          "postalCode": "2000",
+          "addressCountry": "AU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -33.8688,
+          "longitude": 151.2131
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "07:30",
+            "closes": "19:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:30",
+            "closes": "17:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#fcfbf9] text-stone-900 antialiased selection:bg-emerald-900 selection:text-white font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

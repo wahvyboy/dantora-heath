@@ -1,0 +1,6 @@
+{
+  "name": "Dantora Health - Modern Hospital & Diagnostics",
+  "description": "Modern hospital and diagnostic medical center featuring interactive scroll-driven DNA visualization, specialist consultations, and genomic health services.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
