@@ -20,12 +20,12 @@ export const DoctorsSection: React.FC<DoctorsSectionProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* Card 1: Intro Card */}
-          <div className="flex flex-col justify-between rounded-3xl bg-[#274f3b] p-7 text-white min-h-[380px] shadow-sm">
+          <div className="flex flex-col justify-between rounded-3xl bg-[#1e3d2c] p-7 text-white min-h-[380px] shadow-sm">
             <div className="space-y-3">
               <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-200">
                 Our Doctors
               </span>
-              <h3 className="text-2xl font-normal leading-snug tracking-tight text-white">
+              <h3 className="text-2xl font-normal leading-snug tracking-tight text-white font-display">
                 The friendly doctors you <br />
                 <span className="font-semibold text-lime-300">actually talk to</span>
               </h3>
@@ -90,7 +90,7 @@ export const DoctorsSection: React.FC<DoctorsSectionProps> = ({
 
                   <button
                     onClick={() => onSelectDoctorForBooking(doctor)}
-                    className="inline-flex items-center gap-1 rounded-full bg-[#244836] hover:bg-[#1a3527] px-3 py-1.5 text-xs font-semibold text-white transition-all"
+                    className="inline-flex items-center gap-1 rounded-full bg-[#1e3d2c] hover:bg-[#152c20] px-3 py-1.5 text-xs font-semibold text-white transition-all shadow-xs"
                   >
                     <span>Book</span>
                     <ArrowUpRight className="h-3 w-3 text-lime-300" />

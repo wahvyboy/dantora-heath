@@ -32,35 +32,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#fcfbf9]/95 backdrop-blur-md shadow-xs py-3 border-b border-stone-200/70'
-          : 'bg-transparent py-4 sm:py-5'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-[#fcfbf9] border-b border-stone-200/80 shadow-xs py-3 sm:py-3.5 transition-all duration-200"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Clean modern brand emblem (no generic cross) */}
+          {/* Official Hospital Brand Logo */}
           <a
             href="#hero"
-            className="flex items-center gap-2.5 rounded-full py-1 transition-colors focus:outline-none"
+            className="flex items-center gap-3 rounded-full py-1 transition-opacity hover:opacity-90 focus:outline-none"
+            aria-label="Dantora Health Australia Home"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#244836] text-lime-300 shadow-xs">
-              <span className="h-3 w-3 rounded-full bg-lime-300 animate-pulse" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1e3d2c] shadow-xs flex-shrink-0">
+              <svg className="h-6 w-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="26" y="14" width="12" height="36" rx="6" fill="#ffffff" />
+                <rect x="14" y="26" width="36" height="12" rx="6" fill="#ffffff" />
+                <circle cx="32" cy="32" r="5" fill="#d7f766" />
+              </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-stone-900 leading-none">
+              <span className="text-xl font-bold tracking-tight text-stone-900 leading-tight font-display">
                 Dantora
               </span>
-              <span className="text-[10px] tracking-widest text-emerald-800 font-semibold uppercase mt-0.5">
+              <span className="text-[10px] tracking-wider text-emerald-800 font-semibold uppercase">
                 Hospital Australia
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation links */}
-          <nav className="hidden lg:flex items-center gap-1 rounded-full bg-white/85 backdrop-blur-md px-3 py-1.5 border border-stone-200/80 shadow-xs">
+          <nav className="hidden lg:flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 border border-stone-200 shadow-2xs">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -72,23 +73,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             ))}
           </nav>
 
-          {/* Right Action buttons (Strictly Email) */}
+          {/* Right Action buttons */}
           <div className="hidden sm:flex items-center gap-2.5">
             <a
               href={`mailto:${CLINIC_DATA.triageEmail}`}
-              className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-medium text-emerald-900 bg-emerald-100/70 hover:bg-emerald-100 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium text-emerald-900 bg-emerald-100/70 hover:bg-emerald-100 transition-colors"
             >
               <Mail className="h-3.5 w-3.5 text-emerald-800" />
-              <span>Email Doctors</span>
+              <span>Email Us</span>
             </a>
 
             <button
               onClick={onOpenBooking}
               id="nav-contact-btn"
-              className="inline-flex items-center gap-2 rounded-full bg-[#244836] pl-4 pr-2 py-2 text-xs font-semibold text-white shadow-xs hover:bg-[#1a3527] transition-all"
+              className="inline-flex items-center gap-2 rounded-full bg-[#1e3d2c] pl-4 pr-2.5 py-2 text-xs font-semibold text-white shadow-xs hover:bg-[#152c20] transition-all"
             >
-              <span>Book consultation</span>
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#d7f766] text-[#244836]">
+              <span>Book visit</span>
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#d7f766] text-[#1e3d2c]">
                 <ArrowUpRight className="h-3 w-3" />
               </span>
             </button>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, Clock, Calendar, ArrowRight, Tag, Mail, MessageSquare, Check, X, Shield, Sparkles } from 'lucide-react';
+import { BookOpen, Clock, Calendar, ArrowRight, Tag, Mail, Check, X, Shield } from 'lucide-react';
 import { BLOG_POSTS, CLINIC_DATA } from '../data/clinicData';
 import { BlogPost } from '../types';
 
@@ -30,50 +30,50 @@ export const HospitalBlogSection: React.FC = () => {
   };
 
   const handleSendPerspectiveViaEmail = (post: BlogPost) => {
-    const subject = encodeURIComponent(`Health Sector Discussion: ${post.title}`);
+    const subject = encodeURIComponent(`Health Discussion: ${post.title}`);
     const body = encodeURIComponent(
-      `Hello Dantora Health Editorial & Policy Board,\n\nI am writing in response to the article: "${post.title}"\n\nName: ${commentName || 'Healthcare Participant'}\nRole / Background: ${commentRole || 'Patient / Healthcare Professional'}\n\nMy Thoughts & Ideas for Improving the Health Sector:\n${commentText || 'I would like to share feedback on healthcare systemic improvements.'}\n\nKind regards,\n${commentName || ''}`
+      `Hello Dantora Health Team,\n\nI am writing about the article: "${post.title}"\n\nName: ${commentName || 'Reader'}\nRole: ${commentRole || 'Patient / Healthcare Professional'}\n\nMy Thoughts:\n${commentText || 'I would like to share feedback.'}\n\nKind regards,\n${commentName || ''}`
     );
     window.location.href = `mailto:${CLINIC_DATA.feedbackEmail}?subject=${subject}&body=${body}`;
     setCommentSubmitted(true);
   };
 
   return (
-    <section id="blog" className="relative py-20 bg-stone-50/80 border-t border-stone-200/70">
+    <section id="blog" className="relative py-16 sm:py-20 bg-stone-50/80 border-t border-stone-200/70">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div className="max-w-2xl space-y-3">
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-900/15 bg-emerald-900/5 px-3 py-1 text-xs font-semibold tracking-wide text-emerald-900">
               <BookOpen className="h-3.5 w-3.5" />
-              <span>Dantora Hospital Health Journal</span>
+              <span>Hospital Health Journal</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-stone-900 leading-tight font-display">
               Health, Medicine & <br />
-              <span className="font-semibold text-[#1e3d2c]">Bettering the Healthcare Sector</span>
+              <span className="font-semibold text-[#1e3d2c]">Helpful Doctor Insights</span>
             </h2>
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-              Thought leadership from our Australian physicians and radiologists exploring patient literacy, shorter waiting times, preventive genomics, and systemic hospital reforms.
+              Clear guides from our Australian doctors explaining scans, shorter waiting times, genetics, and how hospitals can care better for patients.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-stone-500 bg-white border border-stone-200 px-4 py-2.5 rounded-2xl shadow-2xs">
+          <div className="flex items-center gap-2 text-xs text-stone-600 bg-white border border-stone-200 px-4 py-2.5 rounded-2xl shadow-2xs">
             <Shield className="h-4 w-4 text-emerald-800 flex-shrink-0" />
-            <span>Peer-reviewed clinical essays published from Sydney, NSW</span>
+            <span>Written by our Sydney specialist physicians</span>
           </div>
         </div>
 
         {/* Category Filters */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={`rounded-full px-4 py-2 text-xs font-medium whitespace-nowrap transition-all ${
                 selectedCategory === cat
-                  ? 'bg-[#244836] text-white shadow-xs font-semibold'
-                  : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200/80'
+                  ? 'bg-[#1e3d2c] text-white shadow-xs font-semibold'
+                  : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'
               }`}
             >
               {cat}
@@ -101,7 +101,7 @@ export const HospitalBlogSection: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl font-medium text-stone-900 group-hover:text-emerald-900 transition-colors leading-snug">
+                <h3 className="text-lg sm:text-xl font-medium text-stone-900 group-hover:text-emerald-900 transition-colors leading-snug font-display">
                   {post.title}
                 </h3>
 
@@ -110,11 +110,11 @@ export const HospitalBlogSection: React.FC = () => {
                   {post.excerpt}
                 </p>
 
-                {/* Key Takeaways summary pill */}
+                {/* Key Takeaways summary pill - with clean Check icon instead of Sparkles */}
                 <div className="rounded-2xl bg-stone-50 p-3 border border-stone-100">
                   <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-900 mb-1 flex items-center gap-1">
-                    <Sparkles className="h-3 w-3 text-emerald-700" />
-                    <span>Key Sector Reform</span>
+                    <Check className="h-3.5 w-3.5 text-emerald-700" />
+                    <span>Key Takeaway</span>
                   </div>
                   <p className="text-xs text-stone-600 italic">
                     "{post.keySectorTakeaways[0]}"
@@ -123,7 +123,7 @@ export const HospitalBlogSection: React.FC = () => {
               </div>
 
               {/* Author and Action */}
-              <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between gap-3">
+              <div className="pt-5 mt-5 border-t border-stone-100 flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <img
                     src={post.author.avatar}
@@ -143,7 +143,7 @@ export const HospitalBlogSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handleOpenArticle(post)}
-                  className="inline-flex items-center gap-1 rounded-full bg-stone-100 hover:bg-[#244836] hover:text-white px-3.5 py-1.5 text-xs font-semibold text-stone-800 transition-all flex-shrink-0"
+                  className="inline-flex items-center gap-1 rounded-full bg-stone-100 hover:bg-[#1e3d2c] hover:text-white px-3.5 py-1.5 text-xs font-semibold text-stone-800 transition-all flex-shrink-0"
                 >
                   <span>Read</span>
                   <ArrowRight className="h-3 w-3" />
@@ -154,21 +154,21 @@ export const HospitalBlogSection: React.FC = () => {
         </div>
 
         {/* Policy & Community Note */}
-        <div className="mt-12 rounded-3xl bg-emerald-900 text-white p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
-          <div className="space-y-1.5 max-w-2xl">
-            <h4 className="text-lg sm:text-xl font-medium text-lime-300">
-              Contribute to the Australian Health Sector Dialogue
+        <div className="mt-12 rounded-3xl bg-[#1e3d2c] text-white p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+          <div className="space-y-1 max-w-2xl">
+            <h4 className="text-lg sm:text-xl font-medium text-lime-300 font-display">
+              Have ideas for improving healthcare?
             </h4>
             <p className="text-xs sm:text-sm text-emerald-100 leading-relaxed">
-              Are you an Australian clinician, researcher, or patient with insights on improving hospital workflows and patient communication? We welcome guest contributions and policy proposals strictly via email.
+              We welcome ideas and suggestions from patients and doctors across Australia on making care friendlier and faster.
             </p>
           </div>
           <a
-            href={`mailto:${CLINIC_DATA.feedbackEmail}?subject=Healthcare%20Reform%20Proposal`}
+            href={`mailto:${CLINIC_DATA.feedbackEmail}?subject=Healthcare%20Feedback`}
             className="inline-flex items-center gap-2 rounded-full bg-lime-300 hover:bg-lime-400 text-emerald-950 px-5 py-2.5 text-xs font-bold transition-all shadow-xs flex-shrink-0"
           >
             <Mail className="h-3.5 w-3.5" />
-            <span>Email editorial team</span>
+            <span>Email our team</span>
           </a>
         </div>
 

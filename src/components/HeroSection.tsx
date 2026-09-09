@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronDown, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, ArrowUpRight, Check } from 'lucide-react';
 import { CLINIC_DATA } from '../data/clinicData';
 
 interface HeroSectionProps {
@@ -33,27 +33,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Top clean pill */}
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-900/10 bg-emerald-900/5 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-900">
               <span className="h-2 w-2 rounded-full bg-emerald-600 animate-pulse"></span>
-              <span>Modern Hospital & Quick Scans</span>
+              <span>Modern Hospital & Fast Scans</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15] font-display">
               Healthcare that starts with <br className="hidden sm:inline" />
               <span className="font-semibold text-[#1e3d2c]">understanding you</span>
             </h1>
 
             {/* Subheading in simple English */}
             <p className="text-base sm:text-lg text-stone-600 max-w-xl font-normal leading-relaxed">
-              Clear check-ups, modern body scans, and helpful doctors all in one friendly clinic. We explain all your results in plain, simple words.
+              Clear check-ups, modern body scans, and helpful doctors all in one friendly clinic. We explain all your results in plain words.
             </p>
 
-            {/* Trust badge */}
-            <div className="flex items-center gap-3 pt-1 text-xs sm:text-sm text-stone-500 font-medium">
-              <div className="flex -space-x-1.5">
-                <span className="inline-block h-6 w-6 rounded-full bg-emerald-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-emerald-800">40k</span>
-                <span className="inline-block h-6 w-6 rounded-full bg-lime-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-lime-800">★</span>
+            {/* Trust badge with modern check icon instead of AI stars */}
+            <div className="flex items-center gap-3 pt-1 text-xs sm:text-sm text-stone-600 font-medium">
+              <div className="flex items-center justify-center h-6 w-6 rounded-full bg-emerald-100 text-emerald-800">
+                <Check className="h-3.5 w-3.5" />
               </div>
-              <span>Trusted by over 40,000 happy patients</span>
+              <span>Trusted by over 40,000 patients across Australia</span>
             </div>
 
             {/* Action Buttons */}
@@ -61,7 +60,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <button
                 onClick={onBookVisit}
                 id="hero-book-btn"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#244836] px-6 sm:px-7 py-3 text-sm font-semibold text-white shadow-xs hover:bg-[#1a3527] transition-all"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1e3d2c] px-6 sm:px-7 py-3 text-sm font-semibold text-white shadow-xs hover:bg-[#152c20] transition-all"
               >
                 <span>Book a visit</span>
                 <ArrowUpRight className="h-4 w-4 text-lime-300" />
@@ -70,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <a
                 href="#services"
                 id="hero-services-btn"
-                className="inline-flex items-center justify-center rounded-full bg-white hover:bg-stone-50 px-6 sm:px-7 py-3 text-sm font-semibold text-[#244836] border border-stone-200 shadow-xs transition-all"
+                className="inline-flex items-center justify-center rounded-full bg-white hover:bg-stone-50 px-6 sm:px-7 py-3 text-sm font-semibold text-[#1e3d2c] border border-stone-200 shadow-xs transition-all"
               >
                 See our services
               </a>
